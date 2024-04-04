@@ -1,4 +1,5 @@
 -- 通过文件名，快速查找当前目录下的文件
+-- 注意：需要安装ripgrep, 'brew install ripgrep'
 return {
     'nvim-telescope/telescope.nvim', tag = '0.1.6',
     dependencies = { 'nvim-lua/plenary.nvim' },
