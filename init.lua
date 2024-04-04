@@ -26,6 +26,10 @@ vim.cmd("set shiftwidth=4")
 vim.g.mapleader = " "   -- 定义leader键
 --------------- nvim config ---------------
 
+-- keymap --
+vim.keymap.set('n', '<C-s>', ':source %<CR>', {})   -- 按 ctrl+s 快速刷新配置文件
+-- keymap --
+
 --------------- lazy ---------------
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -40,21 +44,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- 插件中心
-local plugins = {
-    -- 主题配色
-    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-    -- 通过文件名，快速查找当前目录下的文件
-    {
-    'nvim-telescope/telescope.nvim', tag = '0.1.6',
-      dependencies = { 'nvim-lua/plenary.nvim' }
-    },
-    -- 语法高亮 --
-    {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"}
-}
-local opts = {}
-
-require("lazy").setup(plugins, opts)
+require("lazy").setup("plugins")
 --------------- lazy ---------------
 
 -- 主题配色相关配置 --
@@ -65,7 +55,7 @@ vim.cmd.colorscheme "catppuccin"
 
 -- telescope config --
 local builtin = require("telescope.builtin")
-vim.keymap.set('n', '<C-p>', builtin.find_files, {})     -- 按空格键开启
+vim.keymap.set('n', '<C-p>', builtin.find_files, {})        -- 按空格键开启
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})   -- 按leader键+ff开启
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})    -- 按leader键+fg开启
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})      -- 按leader键+fb开启
@@ -81,3 +71,7 @@ config.setup({
     indent = { enable = true },
 })
 -- treesitter config --
+
+-- neo-tree config --
+vim.keymap.set('n', 'tt', ':Neotree<CR>', {})   -- 按tt快速开启文件树Neotree
+-- neo-tree config --
