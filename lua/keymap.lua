@@ -2,9 +2,9 @@
 vim.keymap.set('n', '<C-s>', ':source %<CR>', {})   -- 按 ctrl+s 快速刷新配置文件
 
 -- 分屏快捷键
-vim.keymap.set('n', "sv", ":vsp<CR>", {})   -- 水平分屏
+vim.keymap.set('n', "vsp", ":vsp<CR>", {})   -- 水平分屏
 vim.keymap.set('n', "sp", ":sp<CR>", {})    -- 垂直分屏
-pim.keymap.set('n', "sc", "<C-w>c", {})     -- 关闭当前分屏窗口
+vim.keymap.set('n', "sc", "<C-w>c", {})     -- 关闭当前分屏窗口
 vim.keymap.set('n', "so", "<C-w>o", {})     -- 关闭other分屏窗口
 -- 快捷键，控制分屏模式切换窗口，按 ctrl+h j k l 切换左下上右窗口
 vim.keymap.set('n', "<C-h>", "<C-w>h", {})
