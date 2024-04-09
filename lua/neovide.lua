@@ -18,7 +18,7 @@ vim.g.neovide_cursor_vfx_particle_lifetime = 1.2    -- 粒子寿命
 vim.g.neovide_cursor_vfx_particle_density = 10.0     -- 粒子密度
 vim.g.neovide_cursor_vfx_particle_speed = 30.0      -- 粒子速度
 
-vim.o.guifont = "Meslo LG M for Powerline:h18"  -- 设置字体和行号
+vim.o.guifont = "MesloLGS NF:h18"  -- 设置字体和行号
 
 vim.g.neovide_window_blurred = true -- 设置窗口模糊
 vim.g.neovide_transparency = 0.8    -- 设置窗口透明度
